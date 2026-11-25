@@ -1,11 +1,5 @@
 # Space–Time Trade-off (FROST precomputation study)
 
-Standalone Rust crate for the supervisory research question:
-
-> How does storing precomputed FROST signing material affect online signing time, memory usage, and storage overhead?
-
-This project depends on the existing [`frost2_rust`](https://github.com/NusratTule/Frost2_rust) library via a **pinned git revision** (`rev = 6b995f358b180d027a34ac0cb0137c9a241f98d9` in `Cargo.toml`). It does **not** edit `frost2_rust`'s `core.rs`, `main.rs`, or `roast.rs` — it reuses that crate's public APIs only. Cargo fetches the dependency automatically, so no manual clone of `frost2_rust` is required.
-
 ## Installation
 
 **Prerequisites:** a Rust toolchain (install via [rustup](https://rustup.rs); tested with Rust 2021 edition). `ps` (present on macOS/Linux) is used for coarse RSS sampling.
@@ -109,7 +103,3 @@ FROST-Space-Time-Trade-off/
   output/               # CSV/XLSX results after a run (checked in for the record)
 ```
 
-## Academic note
-
-Do **not** claim that C2 or C3 is faster until measured results demonstrate it.
-This experiment characterises the storage ↔ online-time trade-off; it does not invent new FROST cryptography.
