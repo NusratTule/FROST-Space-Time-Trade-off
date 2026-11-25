@@ -1,0 +1,19 @@
+[package]
+name = "space_time_tradeoff"
+version = "0.1.0"
+edition = "2021"
+description = "Space–time precomputation study for FROST signing (C1/C2/C3). Depends on the frost2_rust crate via a pinned git revision; does not modify that crate."
+default-run = "spacetime_bench"
+
+[lib]
+name = "space_time_tradeoff"
+path = "src/lib.rs"
+
+[[bin]]
+name = "spacetime_bench"
+path = "src/main.rs"
+
+[dependencies]
+# Pinned to the exact revision the experiments were run against (see README).
+frost2_rust = { git = "https://github.com/NusratTule/Frost2_rust.git", rev = "6b995f358b180d027a34ac0cb0137c9a241f98d9" }
+curve25519-dalek = { version = "4.1", default-features = false, features = ["alloc", "rand_core"] }
